@@ -1,0 +1,112 @@
+/*-- Buttons ---*/
+@mixin button-bg($bg) {
+  background: $bg;
+  &:hover {
+    background:darken($bg,8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background:darken($bg,25%);
+  } 
+}
+.btn {
+ color:$light;
+ text-decoration:none;
+ padding:5px 10px;
+ border-radius:3px;
+ font-family: $font1;
+ font-size: 0.5em;
+}
+.btn-cta {
+   @include button-bg($red);
+}
+
+/*--- Header ---*/
+nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+    }
+  
+    li { 
+      display: inline-block;
+     }
+  
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+      font: 100% $font1;
+      color: $light;
+    }
+  }
+  /*--- Body ---*/
+  body, html {
+    height: 100%;
+    font: 100% $font1;
+  }
+  /*--- Footer ---*/
+  .footer {
+    position: relative;
+    background-color: $red;
+    width: 100%;
+    height: 350px;
+    color: $light;
+    padding-top: 50px;
+    .col {
+      float: left;
+    width: 33.33%;
+    padding: 10px;
+    text-align: center;
+    }
+    .rights {
+      font-size: 0.7em;
+      text-align: center;
+      position:absolute;
+      bottom:0;
+      right:0;
+      width:100%;
+    }
+  }
+  /*--- Homepage ---*/
+  .hero {
+    background-image: url('../images/test.jpg');
+    height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  }
+  .hero-text {
+  text-align: center;
+  position: absolute;
+  top: 75%;
+  left: 15%;
+  transform: translate(-25%, -85%);
+  color: $light;
+  font-size: 2em;
+  letter-spacing: 0.02em;
+  line-height: 1.6em;
+  }
+  .container{
+    height: 100%;
+    background-color: $dark;
+  }
+  .row {
+    height: 100%;
+    background-color: $light;
+  }
+  .right-col {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  color: $light;
+  font-size: 1.5em;
+  letter-spacing: 0.02em;
+  line-height: 1.6em;
+   a {
+     color: $light;
+   }}
