@@ -1,3 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+/*--- Layout ---*/
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+[class*="col-"] {
+  float: left;
+  padding: 30px;
+}
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+a {
+  color: $red;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%; padding: 10px;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%; margin-right: auto; margin-left: auto;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;padding-top: 10px; padding-left: 10px;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%; float: right; padding-top: 20%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
 /*-- Buttons ---*/
 @mixin button-bg($bg) {
   background: $bg;
@@ -21,6 +58,7 @@
    @include button-bg($red);
 }
 
+
 /*--- Header ---*/
 nav {
     ul {
@@ -43,8 +81,14 @@ nav {
     }
   }
   /*--- Body ---*/
+  html,
+body {
+  margin: 0;
+  padding: 0;
+}
   body, html {
     height: 100%;
+    width: 100%;
     font: 100% $font1;
   }
   /*--- Footer ---*/
@@ -55,10 +99,10 @@ nav {
     height: 350px;
     color: $light;
     padding-top: 50px;
-    .col {
+    .col-4 {
       float: left;
     width: 33.33%;
-    padding: 10px;
+    padding: 30px;
     text-align: center;
     }
     .rights {
@@ -90,12 +134,12 @@ nav {
   letter-spacing: 0.02em;
   line-height: 1.6em;
   }
-  .container{
+  .hero-container{
     height: 100%;
     background-color: $dark;
   }
   .row {
-    height: 100%;
+    min-height: 100%;
     background-color: $light;
   }
   .right-col {
